@@ -16,11 +16,11 @@ sys.path.append(os.path.sep.join([os.getcwd(), '']))
 from src.core.query import Query
 
 # %% metadata
-samples = [670, 672]
+samples = [0]
 
 models = [0]
 
-sims = [33]
+sims = [0]
 
 dats = []
 
@@ -35,3 +35,5 @@ q = Query(
 
 # %% obtain thresholds
 data = q.threshold_data(meanify=False, ignore_missing=False)
+
+print(data)

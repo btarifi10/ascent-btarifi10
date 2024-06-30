@@ -19,12 +19,12 @@ q = Query(
     {
         'partial_matches': True,
         'include_downstream': True,
-        'indices': {'sample': [3, 4, 5, 6], 'model': [0, 1, 2, 3], 'sim': [0, 1]},
+        'indices': {'sample': [0], 'model': [0], 'sim': [0]},
     }
 ).run()
 
 q.excel_output(
-    '/Users/jakecariello/Desktop/test.xlsx',
+    '/Users/btari/Desktop/test.xlsx',
     sample_keys=[['sample'], ['sex']],
     model_keys=[['cuff', 'rotate', 'add_ang']],
     individual_indices=False,

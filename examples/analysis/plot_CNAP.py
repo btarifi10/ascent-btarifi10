@@ -20,8 +20,8 @@ from src.core.query import Query  # noqa E402
 
 sns.set_style("whitegrid")
 
-fiber_indices = list(range(13))
-print(fiber_indices)
+fiber_indices = list(range(17))
+# print(fiber_indices)
 
 q = Query(
     {
@@ -35,8 +35,10 @@ data = q.sfap_data(fiber_indices, all_fibers=True)
 # CNAP = Summation of all fibers
 cnap = data.groupby(['fiber', 'SFAP_times'])['SFAP0'].sum().reset_index()
 
+print(cnap.info())
+
 # Generate plot
-sns.lineplot(data=cnap, x='SFAP_times', y='SFAP0', palette='deep')
+sns.lineplot(data=cnap, x='SFAP_times', y='SFAP0')
 plt.title('Compound Neuron Action Potential')
 plt.xlabel('Time (ms)')
 plt.ylabel(r'signal (${\mu}V$)')

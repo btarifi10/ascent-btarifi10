@@ -55,8 +55,8 @@ for waveform_ind, waveform in enumerate(sim.waveforms):
     fname = f'{str(sample_index)}_{str(model_index)}_{str(sim_index)}_{str(waveform_ind)}'
     fmt = 'png'
 
-    dest = os.path.join('data', 'tmp', 'waveforms')
+    dest = os.path.join('.', 'data', 'tmp', 'waveforms')
     if not os.path.exists(dest):
-        os.mkdir(dest)
+        os.makedirs(dest)
 
     plt.gcf().savefig(os.path.join(dest, f'{fname}.{fmt}'), format=fmt, dpi=1200)

@@ -18,12 +18,12 @@ import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.animation import FuncAnimation
 
-samples = [200, 201, 205]
+samples = [0]
 models = [0]
-sims = [0, 1, 2]
+sims = [0]
 inner = 0
 fiber = 0
-n_sims = [0, 1, 2]
+n_sims = [0]
 amp = 0
 
 outpath = 'out/analysis/videos'
@@ -73,10 +73,10 @@ for sample in samples:
                 data = np.loadtxt(
                     os.path.join(
                         data_path,
-                        f'Vm_time_inner{inner}_fiber{fiber}_amp{amp}.dat',
+                        f'thresh_inner{inner}_fiber{fiber}.dat',
                     ),
                     skiprows=1,
-                )[:, 0:]
+                )[:]
 
                 # initialize plot
                 fig, ax = plt.subplots()
